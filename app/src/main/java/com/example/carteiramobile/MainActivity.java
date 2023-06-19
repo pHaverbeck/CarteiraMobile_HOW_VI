@@ -5,6 +5,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.EditText;
+import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -17,7 +19,18 @@ public class MainActivity extends AppCompatActivity {
         v.setOnClickListener(new View.OnClickListener() { // Criando objeto de classe anônima para evento de click
             @Override
             public void onClick(View view) {
-                Log.i("botao", "O botão foi clicado");
+                View v = findViewById(R.id.editTextA);
+                EditText et = (EditText) v;
+                String valorCampoA = et.getText().toString();
+                String valorCampoB = ((EditText)findViewById(R.id.editTextB)).getText().toString();
+                int valorA = Integer.parseInt(valorCampoA);
+                int valorB = Integer.parseInt(valorCampoB);
+                int soma = valorA + valorB;
+
+                TextView tv = (TextView)findViewById(R.id.textViewSoma);
+                String somaTexto = String.valueOf(soma);
+                tv.setText(somaTexto);
+                Log.i("botao", "O botão foi clicado:"+ valorCampoA);
             }
         });
 
