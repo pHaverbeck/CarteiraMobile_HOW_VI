@@ -2,6 +2,7 @@ package com.example.carteiramobile;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -27,10 +28,16 @@ public class MainActivity extends AppCompatActivity {
                 int valorB = Integer.parseInt(valorCampoB);
                 int soma = valorA + valorB;
 
+                Intent nav = new Intent(view.getContext(), ActivityResultado.class);
+                nav.putExtra("calculo", soma);
+                startActivity(nav);
+
+                /*
                 TextView tv = (TextView)findViewById(R.id.textViewSoma);
                 String somaTexto = String.valueOf(soma);
                 tv.setText(somaTexto);
                 Log.i("botao", "O botão foi clicado:"+ valorCampoA);
+                */
             }
         });
 
