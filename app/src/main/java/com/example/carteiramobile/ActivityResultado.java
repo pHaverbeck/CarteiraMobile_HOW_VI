@@ -22,6 +22,7 @@ public class ActivityResultado extends AppCompatActivity {
         LinearLayout ll = findViewById(R.id.llCalculo);                                             // Referencia o linear layout
         for(Integer valor: historico){                                                              // Pega o valor do histórico e coloca em um novo textview
             TextView tv = new TextView(this);
+            tv.setTextSize(22f);
             tv.setText(String.valueOf(valor));
             ll.addView(tv);
         }
